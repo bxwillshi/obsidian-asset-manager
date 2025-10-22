@@ -1,0 +1,18 @@
+filters:
+  and:
+    - file.folder == "0️⃣ Project"
+views:
+  - type: cards
+    name: All Projects
+    order:
+      - file.name
+      - Customer
+      - Dealer
+      - Product
+      - Discount %
+      - Amount
+      - Status
+      - Contract Date
+    sort: []
+    columnSize:
+      file.name: 266

@@ -11,6 +11,7 @@ import sys
 # from tabulate import tabulate
 from obsiasset.utils.appLogger import AppLogger
 from obsiasset.utils.appConfig import AppConfig
+from obsiasset.utils.appManager import AppManager
 # from crontab import CronTab
 # from crontab import CronItem
 
@@ -34,6 +35,7 @@ class AppApi(object):
         self.app_config = AppConfig()
         self.app_args = app_args
         self.app_logger = AppLogger()
+        self.app_manager = AppManager()
 
     def show_version(self):
         pkg_version = self.app_config.get_version_from_package()
@@ -88,21 +90,17 @@ class AppApi(object):
         return True
 
     def init(self):
-        param_vault = str(self.app_args.get("vault")).lower()
+        # param_vault = str(self.app_args.get("vault")).lower()
         param_schema = str(self.app_args.get("schema")).lower()
 
-        if param_vault is None or param_vault == "":
-            param_vault = "."
-        vault_path = os.path.join(
-            self.app_config.app_workdir,
-            param_vault
-        )
-
-        schema_yaml = self.app_config.get_schema_by_name(param_schema)
-        for item in schema_yaml.get("entities", dict()):
-            
-        self.app_config.get_template_by_path(self.app_config.schema_template_path)
-
+        # if param_vault is None or param_vault == "":
+        #     param_vault = "."
+        # vault_path = os.path.join(
+        #     self.app_config.app_workdir,
+        #     param_vault
+        # )
+        self.app_manager.copy_setup_schema(param_schema, self.app_config.app_workdir)
+        return True
 
     def reorg(self):
         pass

@@ -32,7 +32,7 @@ classifiers = [
 Homepage = "https://github.com/bxwillshi/obsidian-asset-manager"
 
 [project.scripts]
-obsivault = "obsiasset.main:main"
+obsiasset = "obsiasset.main:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

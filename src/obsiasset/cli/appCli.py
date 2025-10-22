@@ -6,6 +6,7 @@ import sys
 import argparse
 import argcomplete
 from obsiasset.utils.appConfig import AppConfig
+from obsiasset.utils.appManager import AppManager
 
 
 class OptObj(object):
@@ -20,7 +21,7 @@ class OptObj(object):
 
 
 class OptItems(object):
-    def __init__(self, app_config: AppConfig):
+    def __init__(self, app_config: AppConfig, app_manager: AppManager):
 
         self.vault = OptObj()
         self.vault.name = "--vault"
@@ -30,7 +31,7 @@ class OptItems(object):
         self.vault.help = "Specify vault directory, if empty it will be set as default value {}".format(self.vault.default)
         self.vault.type = str
 
-        schemas = app_config.get_supported_schemas()
+        schemas = app_manager.get_supported_schemas()
         self.schema = OptObj()
         self.schema.name = "--schema"
         self.schema.metavar = "<{}>".format("|".join(schemas))
@@ -71,6 +72,7 @@ def add_argument_to_sub_parser(sub_parser_item, arg_item, is_required):
 class AppParser(object):
     def __init__(self):
         self.app_config = AppConfig()
+        self.app_manager = AppManager()
         self.parser = AppArgumentParser(description="")
         argcomplete.autocomplete(self.parser)
         sub_parsers = self.parser.add_subparsers(
@@ -78,7 +80,7 @@ class AppParser(object):
             help=""
         )
 
-        arg_items = OptItems(self.app_config)
+        arg_items = OptItems(self.app_config, self.app_manager)
 
         sub_parsers.add_parser(
             "show-version",
@@ -99,31 +101,31 @@ class AppParser(object):
             "init",
             help="Init assets vault"
         )
-        add_argument_to_sub_parser(
-            sub_parser_init,
-            arg_items.vault,
-            is_required=False
-        )
+        # add_argument_to_sub_parser(
+        #     sub_parser_init,
+        #     arg_items.vault,
+        #     is_required=False
+        # )
         add_argument_to_sub_parser(
             sub_parser_init,
             arg_items.schema,
             is_required=True
         )
 
-        sub_parser_reorg = sub_parsers.add_parser(
-            "reorg",
-            help="Re-organize assets vault"
-        )
-        add_argument_to_sub_parser(
-            sub_parser_reorg,
-            arg_items.vault,
-            is_required=False
-        )
-        add_argument_to_sub_parser(
-            sub_parser_reorg,
-            arg_items.schema,
-            is_required=True
-        )
+        # sub_parser_reorg = sub_parsers.add_parser(
+        #     "reorg",
+        #     help="Re-organize assets vault"
+        # )
+        # add_argument_to_sub_parser(
+        #     sub_parser_reorg,
+        #     arg_items.vault,
+        #     is_required=False
+        # )
+        # add_argument_to_sub_parser(
+        #     sub_parser_reorg,
+        #     arg_items.schema,
+        #     is_required=True
+        # )
 
 
 if __name__ == "__main__":

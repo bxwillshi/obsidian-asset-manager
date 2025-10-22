@@ -126,6 +126,18 @@ class AppConfig(object):
         with open(file_path, "w", encoding="utf-8") as f:
             f.write(yaml.dump(file_content))
         return True
+    
+    def copy_file(self, src_path, dest_path):
+        if not os.path.exists(src_path):
+            self.app_logger.tab_failure("Source file {} not found".format(src_path))
+            return False
+        dest_dir = os.path.dirname(dest_path)
+        if dest_dir and not os.path.exists(dest_dir):
+            os.makedirs(dest_dir, exist_ok=True)
+        with open(src_path, "r", encoding="utf-8") as f_src:
+            with open(dest_path, "w", encoding="utf-8") as f_dest:
+                f_dest.write(f_src.read())
+        return True
 
 
 if __name__ == "__main__":
