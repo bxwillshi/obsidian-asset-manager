@@ -1,2 +1,1 @@
-# ob_vault_organizer
-Obsidian Vault Organization
+# Obsidian Asset Manager

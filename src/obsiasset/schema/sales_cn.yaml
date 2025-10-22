@@ -1,0 +1,44 @@
+name: sales_cn
+version: 0.1.0
+description: 销售数字化模板（客户/报价/案例/FAQ）
+
+entities:
+  - name: tmpl_meeting_note
+    path: ["🛠️ 配置", "模板", "模板_会议记录.md"]
+    template: ["files", "tmpl_meeting_note.md"]
+  - name: tmpl_customer
+    path: ["🛠️ 配置", "模板", "模板_客户.md"]
+    template: ["files", "tmpl_customer.md"]
+  - name: tmpl_contact
+    path: ["🛠️ 配置", "模板", "模板_联系人.md"]
+    template: ["files", "tmpl_contact.md"]
+  - name: tmpl_project
+    path: ["🛠️ 配置", "模板", "模板_项目.md"]
+    template: ["files", "tmpl_project.md"]
+  - name: script
+    path: ["自动化"]
+    template: []
+  - name: project
+    path: ["0️⃣ 项目"]
+    template: []
+  - name: project
+  - path: ["1️⃣ 合同"]
+    template: []
+  - name: project
+    path: ["2️⃣ 报价"]
+    template: []
+  - name: project
+    path: ["3️⃣ 回单"]
+    template: []
+  - name: project
+    path: ["4️⃣ 发票"]
+    template: []
+  - name: project
+    path: ["5️⃣ 售后"]
+    template: []
+  - name: project
+    path: ["6️⃣ 客户"]
+    template: []
+  - name: project
+    path: ["9️⃣ 笔记"]
+    template: []
