@@ -126,32 +126,32 @@ sample:
     - name: "Acme Corp"
       alias: "Acme"
       discount: 10
-      contact: "[[Alice Johnson]]"
+      contact: '"[[Alice Johnson]]"'
     - name: "Globex Inc"
       alias: "Globex"
       discount: 15
-      contact: "[[Bob Smith]]"
+      contact: '"[[Bob Smith]]"'
     - name: "Initech"
       alias: "Initech"
       discount: 5
-      contact: "[[Charlie Brown]]"
+      contact: '"[[Charlie Brown]]"'
     - name: "Umbrella Corp"
       alias: "Umbrella"
       discount: 20
-      contact: "[[Diana Prince]]"
+      contact: '"[[Diana Prince]]"'
     - name: "Hooli"
       alias: "Hooli"
       discount: 12
-      contact: "[[Ethan Hunt]]"
+      contact: '"[[Ethan Hunt]]"'
     - name: "Stark Industries"
       alias: "Stark"
       discount: 18
-      contact: "[[Fiona Glenanne]]"
+      contact: '"[[Fiona Glenanne]]"'
   project:
     - status: "🟠 LOST"
       name: "Project Alpha"
-      customer: "[[Acme Corp]]"
-      dealer: "[[Bob Smith]]"
+      customer: '"[[Acme Corp]]"'
+      dealer: '"[[Bob Smith]]"'
       link: ""
       amount: 50000
       summary: "Background: Develop a new marketing strategy. Solution: Comprehensive market analysis and campaign execution."
@@ -162,9 +162,9 @@ sample:
       contract_date: ""
     - status: "🔵 ON-TRACK"
       name: "Project Beta"
-      customer: "[[Globex Inc]]"
-      dealer: "[[Charlie Brown]]"
-      link: "[[Project Alpha]]"
+      customer: '"[[Globex Inc]]"'
+      dealer: '"[[Charlie Brown]]"'
+      link: '"[[Project Alpha]]"'
       amount: 75000
       summary: "Background: Upgrade IT infrastructure. Solution: Implement cloud-based solutions and enhance cybersecurity."
       quotation: "[[quotation_beta.pdf]]"
@@ -174,8 +174,8 @@ sample:
       contract_date: ""
     - status: "🔵 ON-TRACK"
       name: "Project Gamma"
-      customer: "[[Initech]]"
-      dealer: "[[Diana Prince]]"
+      customer: '"[[Initech]]"'
+      dealer: '"[[Diana Prince]]"'
       link: ""
       amount: 60000
       summary: "Background: Launch new product line. Solution: Product development, market research, and promotional activities."
@@ -186,8 +186,8 @@ sample:
       contract_date: ""
     - status: "🟢 WON"
       name: "Project Delta"
-      customer: "[[Umbrella Corp]]"
-      dealer: "[[Ethan Hunt]]"
+      customer: '"[[Umbrella Corp]]"'
+      dealer: '"[[Ethan Hunt]]"'
       link: ""
       amount: 85000
       summary: "Background: Expand into new markets. Solution: Market analysis, localization strategies, and partnership development."
@@ -198,8 +198,8 @@ sample:
       contract_date: "2024-07-01"
     - status: "🟢 WON"
       name: "Project Epsilon"
-      customer: "[[Hooli]]"
-      dealer: "[[Fiona Glenanne]]"
+      customer: '"[[Hooli]]"'
+      dealer: '"[[Fiona Glenanne]]"'
       link: ""
       amount: 72000
       summary: "Background: Improve customer service. Solution: Implement CRM system and train support staff."
@@ -210,28 +210,28 @@ sample:
       contract_date: "2024-07-05"
   meeting_notes:
     - name: "2024-07-15 Sales Kickoff Meeting"
-      item: "Follow up with [[Alice Johnson]] regarding project requirements."
-      owner: "[[Bob Smith]]"
+      item: 'Follow up with "[[Alice Johnson]]" regarding project requirements.'
+      owner: '"[[Bob Smith]]"'
       due_date: "2024-07-15"
       status: "X"
     - name: "2024-07-20 Client Strategy Session"
-      item: "Prepare quotation for [[Globex Inc]]'s new project."
-      owner: "[[Charlie Brown]]"
+      item: 'Prepare quotation for "[[Globex Inc]]" new project.'
+      owner: '"[[Charlie Brown]]"'
       due_date: "2024-07-20"
       status: "/"
     - name: "2024-07-18 Project Planning Meeting"
-      item: "Schedule meeting with [[Initech]] to discuss project timeline."
-      owner: "[[Diana Prince]]"
+      item: 'Schedule meeting with "[[Initech]]" to discuss project timeline.'
+      owner: '"[[Diana Prince]]"'
       due_date: "2024-07-18"
       status: "/"
     - name: "2024-07-22 Contract Review Meeting"
-      item: "Review contract terms with [[Umbrella Corp]]'s legal team."
-      owner: "[[Ethan Hunt]]"
+      item: 'Review contract terms with "[[Umbrella Corp]]" legal team.'
+      owner: '"[[Ethan Hunt]]"'
       due_date: "2024-07-22"
       status: " "
     - name: "2024-07-25 Customer Service Improvement Meeting"
-      item: "Finalize project plan for [[Hooli]]'s customer service improvement."
-      owner: "[[Fiona Glenanne]]"
+      item: 'Finalize project plan for "[[Hooli]]" customer service improvement.'
+      owner: '"[[Fiona Glenanne]]"'
       due_date: "2024-07-25"
       status: " "
 

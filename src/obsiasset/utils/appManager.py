@@ -83,7 +83,7 @@ class AppManager(object):
             sample_key = item.get("sample_key")
             if import_sample and len(sample_path) > 0 and sample_key and sample_key != "":
                 for sample_item in sample_config.get(sample_key, []):
-                    i18n_config[sample_key] = sample_item 
+                    i18n_config['sample'][sample_key] = sample_item 
                     sample_name = "{}.md".format(sample_item.get("name", "?"))
                     abs_sample_path = os.path.join(abs_asset_path, sample_name)
                     self.app_logger.tab_launch("Import sample asset: {}".format(abs_sample_path))

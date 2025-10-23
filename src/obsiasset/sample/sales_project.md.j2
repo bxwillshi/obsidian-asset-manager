@@ -1,15 +1,15 @@
 ---
-{{ properties.status }}: {{ project.status }}
-{{ properties.customer }}: {{ project.customer }}
-{{ properties.dealer }}: {{ project.dealer }}
-{{ properties.link }}: {{ project.link }}
+{{ properties.status }}: {{ sample.project.status }}
+{{ properties.customer }}: {{ sample.project.customer }}
+{{ properties.dealer }}: {{ sample.project.dealer }}
+{{ properties.link }}: {{ sample.project.link }}
 {{ properties.product }}:
 {{ properties.category }}:
-{{ properties.amount }}: {{ project.amount }}
-{{ properties.start_date }}: {{ project.start_date }}
+{{ properties.amount }}: {{ sample.project.amount }}
+{{ properties.start_date }}: {{ sample.project.start_date }}
 {{ properties.report_date }}:
 {{ properties.quotation_date }}:
-{{ properties.contract_date }}: {{ project.contract_date }}
+{{ properties.contract_date }}: {{ sample.project.contract_date }}
 {{ properties.payment_date }}:
 {{ properties.shipment_date }}:
 {{ properties.delivery_date }}:
@@ -20,16 +20,16 @@
 
 > {{ content.project_description }}
 
-- {{ project.summary }}
+- {{ sample.project.summary }}
 
 ## {{ content.project_reference }}
 
 | {{ content.project_document }} | {{ content.project_link }}|
 | ---- | ---- |
-| {{ content.project_quotation }} | {{ project.quotation }} |
-| {{ content.project_contract }} | {{ project.contract }} |
+| {{ content.project_quotation }} | {{ sample.project.quotation }} |
+| {{ content.project_contract }} | {{ sample.project.contract }} |
 | {{ content.project_receipt }} |      |
 | {{ content.project_delivery }} |      |
-| {{ content.project_express }} | {{ project.express }} |
+| {{ content.project_express }} | {{ sample.project.express }} |
 | {{ content.project_invoice }} |      |
 | {{ content.project_support }} |      |
