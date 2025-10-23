@@ -31,6 +31,7 @@ class AppConfig(object):
         self.pkg_dir = os.path.dirname(pkg_spec.origin) if pkg_spec and pkg_spec.origin else None
         self.tmpl_dir = os.path.join(self.pkg_dir, "tmpl") if self.pkg_dir else None
         self.schema_dir = os.path.join(self.pkg_dir, "schema") if self.pkg_dir else None
+        self.i18n_dir = os.path.join(self.pkg_dir, "i18n") if self.pkg_dir else None
         self.app_workdir = os.getcwd()
         self.app_workdir_name = os.path.basename(self.app_workdir)
 
@@ -96,6 +97,13 @@ class AppConfig(object):
         except PackageNotFoundError:
             pkg_version = "0.x"
         return pkg_version
+
+    def get_data_from_yaml_string(self, yaml_string, default_content={}):
+        try:
+            return yaml.safe_load(yaml_string)
+        except Exception as e:
+            self.app_logger.tab_failure("Failed to read yaml string : {}".format(e))
+            return default_content
 
     def get_data_from_yaml_file(self, yaml_file, default_content={}):
         if not os.path.exists(yaml_file):

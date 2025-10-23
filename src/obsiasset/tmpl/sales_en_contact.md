@@ -1,6 +1,0 @@
----
-Name:
-Nickname:
-Phone:
-Email:
----

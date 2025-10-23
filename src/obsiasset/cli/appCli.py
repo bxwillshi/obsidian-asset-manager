@@ -36,10 +36,20 @@ class OptItems(object):
         self.schema.name = "--schema"
         self.schema.metavar = "<{}>".format("|".join(schemas))
         self.schema.action = "store"
-        self.schema.default = "scpi"
+        self.schema.default = ""
         self.schema.help = "Select schema"
         self.schema.type = str
         self.schema.choices = schemas
+
+        languages = app_manager.get_supported_languages()
+        self.lang = OptObj()
+        self.lang.name = "--lang"
+        self.lang.metavar = "<{}>".format("|".join(languages))
+        self.lang.action = "store"
+        self.lang.default = "en"
+        self.lang.help = "Select language"
+        self.lang.type = str
+        self.lang.choices = languages
 
 
 class AppArgumentParser(argparse.ArgumentParser):
@@ -109,6 +119,11 @@ class AppParser(object):
         add_argument_to_sub_parser(
             sub_parser_init,
             arg_items.schema,
+            is_required=True
+        )
+        add_argument_to_sub_parser(
+            sub_parser_init,
+            arg_items.lang,
             is_required=True
         )
 

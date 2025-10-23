@@ -92,6 +92,12 @@ class AppApi(object):
     def init(self):
         # param_vault = str(self.app_args.get("vault")).lower()
         param_schema = str(self.app_args.get("schema")).lower()
+        param_lang = str(self.app_args.get("lang")).lower()
+        param_sample = self.app_args.get("import-sample")
+        self.app_logger.launch("Start to init a vault folder structure by schema [{}] and language [{}]...".format(
+            param_schema,
+            param_lang
+        ))
 
         # if param_vault is None or param_vault == "":
         #     param_vault = "."
@@ -99,7 +105,26 @@ class AppApi(object):
         #     self.app_config.app_workdir,
         #     param_vault
         # )
-        self.app_manager.copy_setup_schema(param_schema, self.app_config.app_workdir)
+        setup_result = self.app_manager.setup_schema(
+            schema_name=param_schema,
+            lang_code=param_lang,
+            abs_vault_path=self.app_config.app_workdir
+        )
+        if setup_result:
+            self.app_logger.success("Complete to init vault folder structure.")
+        else:
+            self.app_logger.failure("Fail to init vault folder structure.")
+            return False
+        if param_sample:
+            import_result = self.app_manager.import_sample_assets(
+                # self.app_config.app_workdir
+            )
+            if import_result:
+                self.app_logger.success("Complete to import sample assets.")
+            else:
+                self.app_logger.failure("Fail to import sample assets.")
+                return False
+        self.app_logger.success("🎉 All done!")
         return True
 
     def reorg(self):
