@@ -19,6 +19,7 @@ class AppManager(object):
         self.app_logger = AppLogger()
         self.j2env_schemas = j2Environment(loader=j2FileSystemLoader(self.app_config.schema_dir))
         self.j2env_templates = j2Environment(loader=j2FileSystemLoader(self.app_config.tmpl_dir))
+        self.j2env_samples = j2Environment(loader=j2FileSystemLoader(self.app_config.sample_dir))
 
     def get_supported_schemas(self):
         app_schemas = list()
@@ -56,12 +57,13 @@ class AppManager(object):
             return None
         return self.app_config.get_data_from_yaml_file(tmpl_file_path)
     
-    def setup_schema(self, schema_name: str, lang_code: str, abs_vault_path: list):
+    def setup_schema(self, schema_name: str, lang_code: str, abs_vault_path: list, import_sample: bool = False):
         i18n_config = self.get_i18n_by_name(schema_name, lang_code)
         if i18n_config is None:
             return False
         schema_config_string = self.j2env_schemas.get_template("{}.yaml.j2".format(schema_name)).render(i18n_config)
         schema_config = self.app_config.get_data_from_yaml_string(schema_config_string)
+        sample_config = i18n_config.get("sample", {})
         for item in schema_config.get("entities", []):
             asset_path = item.get("path", [])
             template_path = item.get("template", [])
@@ -76,10 +78,20 @@ class AppManager(object):
                 self.app_logger.tab_launch("Create folder: {}".format(abs_asset_path))
                 os.makedirs(abs_asset_path, exist_ok=True)
                 self.app_logger.tab_success("Done")
+            # Check and import sample assets
+            sample_path = item.get("sample", [])
+            sample_key = item.get("sample_key")
+            if import_sample and len(sample_path) > 0 and sample_key and sample_key != "":
+                for sample_item in sample_config.get(sample_key, []):
+                    i18n_config[sample_key] = sample_item 
+                    sample_name = "{}.md".format(sample_item.get("name", "?"))
+                    abs_sample_path = os.path.join(abs_asset_path, sample_name)
+                    self.app_logger.tab_launch("Import sample asset: {}".format(abs_sample_path))
+                    sample_content = self.j2env_samples.get_template(os.path.join(*sample_path)).render(i18n_config)
+                    with open(abs_sample_path, "w", encoding="utf-8") as f:
+                        f.write(sample_content)
+                    self.app_logger.tab_success("Done")
         return True
-
-    def import_sample_assets(self):
-        pass
 
 
 if __name__ == "__main__":

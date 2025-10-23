@@ -18,6 +18,7 @@ schema:
     tmpl_contact: "模板_联系人.md"
     tmpl_project: "模板_项目.md"
     automation: "自动化"
+    contact: "联系人"
     project_board: "📊 项目看板.base"
     task_list: "✈️ 任务列表.md"
 

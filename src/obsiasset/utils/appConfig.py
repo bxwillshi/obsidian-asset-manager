@@ -31,6 +31,7 @@ class AppConfig(object):
         self.pkg_dir = os.path.dirname(pkg_spec.origin) if pkg_spec and pkg_spec.origin else None
         self.tmpl_dir = os.path.join(self.pkg_dir, "tmpl") if self.pkg_dir else None
         self.schema_dir = os.path.join(self.pkg_dir, "schema") if self.pkg_dir else None
+        self.sample_dir = os.path.join(self.pkg_dir, "sample") if self.pkg_dir else None
         self.i18n_dir = os.path.join(self.pkg_dir, "i18n") if self.pkg_dir else None
         self.app_workdir = os.getcwd()
         self.app_workdir_name = os.path.basename(self.app_workdir)

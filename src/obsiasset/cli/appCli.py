@@ -51,6 +51,13 @@ class OptItems(object):
         self.lang.type = str
         self.lang.choices = languages
 
+        self.sample = OptObj()
+        self.sample.name = "--import-sample"
+        self.sample.metavar = "<{}>".format("|".join(languages))
+        self.sample.action = "store_true"
+        self.sample.default = False
+        self.sample.help = "Import assets sample"
+
 
 class AppArgumentParser(argparse.ArgumentParser):
     def error(self, message: str):
@@ -125,6 +132,11 @@ class AppParser(object):
             sub_parser_init,
             arg_items.lang,
             is_required=True
+        )
+        add_argument_to_sub_parser(
+            sub_parser_init,
+            arg_items.sample,
+            is_required=False
         )
 
         # sub_parser_reorg = sub_parsers.add_parser(

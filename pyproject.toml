@@ -39,4 +39,4 @@ obsiasset = "obsiasset.main:main"
 where = ["src"]
 
 [tool.setuptools]
-package-data = { "obsiasset" = ["config/**", "tmpl/**", "schema/**", "i18n/**"] }
+package-data = { "obsiasset" = ["config/**", "tmpl/**", "schema/**", "i18n/**", "sample/**"] }
