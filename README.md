@@ -31,10 +31,10 @@ pip install obsiasset
 obsiasset init --schema sales --lang en --import-sample
 ```
 
-![ToDo List](images/todo_list.png)
-![Dashboard](images/dashboard.png)
-![Project](images/project.png)
-![Graph View](images/graph.png)
+![ToDo List](https://raw.githubusercontent.com/bxwillshi/obsidian-asset-manager/main/images/todo_list.png)
+![Dashboard](https://raw.githubusercontent.com/bxwillshi/obsidian-asset-manager/main/images/dashboard.png)
+![Project](https://raw.githubusercontent.com/bxwillshi/obsidian-asset-manager/main/images/project.png)
+![Graph View](https://raw.githubusercontent.com/bxwillshi/obsidian-asset-manager/main/images/graph.png)
 
 ## 📦 Installation
 
