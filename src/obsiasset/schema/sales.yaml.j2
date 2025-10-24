@@ -7,6 +7,14 @@ entities:
     template: []
     sample: []
     sample_key: ""
+  - path: ["{{ schema.entities.settings }}", "{{ schema.entities.asset }}"]
+    template: []
+    sample: []
+    sample_key: ""
+  - path: ["{{ schema.entities.settings }}", "{{ schema.entities.asset }}", "{{ schema.entities.asset_custom_properties }}"]
+    template: ["sales_custom_properties.md.j2"]
+    sample: []
+    sample_key: ""
   - path: ["{{ schema.entities.settings }}", "{{ schema.entities.tmpl }}"]
     template: []
     sample: []
@@ -25,6 +33,10 @@ entities:
     sample_key: ""
   - path: ["{{ schema.entities.settings }}", "{{ schema.entities.tmpl }}", "{{ schema.entities.tmpl_project }}"]
     template: ["sales_project.md.j2"]
+    sample: []
+    sample_key: ""
+  - path: ["{{ schema.entities.settings }}", "{{ schema.entities.tmpl }}", "{{ schema.entities.tmpl_product }}"]
+    template: ["sales_product.md.j2"]
     sample: []
     sample_key: ""
   - path: ["{{ schema.entities.settings }}", "{{ schema.entities.automation }}"]
@@ -63,6 +75,10 @@ entities:
     template: []
     sample: ["sales_contact.md.j2"]
     sample_key: "contact"
+  - path: ["{{ schema.entities.product }}"]
+    template: []
+    sample: ["sales_product.md.j2"]
+    sample_key: "product"
   - path: ["{{ schema.entities.notes }}"]
     template: []
     sample: ["sales_meeting_notes.md.j2"]

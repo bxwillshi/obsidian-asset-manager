@@ -13,6 +13,8 @@ views:
       - {{ properties.amount }}
       - {{ properties.status }}
       - {{ properties.contract_date }}
-    sort: []
+    sort:
+      - property: {{ properties.start_date}}
+        direction: ASC
     columnSize:
       file.name: 266

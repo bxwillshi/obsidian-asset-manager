@@ -25,11 +25,16 @@
 pip install obsiasset
 ```
 
-### 3️⃣ Init Asset Vault and Import Sample Assets
+### 3️⃣ Open Obsidian and create a vault 
+
+### 4️⃣ Init Asset Vault and Import Sample Assets
 
 ```bash
+cd <dir_of_obsidian_vault>
 obsiasset init --schema sales --lang en --import-sample
 ```
+
+### 5️⃣ Back to Obsidian
 
 ![ToDo List](https://raw.githubusercontent.com/bxwillshi/obsidian-asset-manager/main/images/todo_list.png)
 ![Dashboard](https://raw.githubusercontent.com/bxwillshi/obsidian-asset-manager/main/images/dashboard.png)

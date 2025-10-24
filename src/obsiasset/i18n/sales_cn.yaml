@@ -10,13 +10,17 @@ schema:
     invoice: "4️⃣ 发票"
     support: "5️⃣ 售后"
     customer: "6️⃣ 客户"
+    product: "7️⃣ 产品"
     notes: "9️⃣ 笔记"
     settings: "🛠️ 配置"
+    asset: "资产"
+    asset_custom_properties: "自定义属性.md"
     tmpl: "模板"
     tmpl_meeting_notes: "模板_会议记录.md"
     tmpl_customer: "模板_客户.md"
     tmpl_contact: "模板_联系人.md"
     tmpl_project: "模板_项目.md"
+    tmpl_product: "模板_产品.md"
     automation: "自动化"
     contact: "联系人"
     project_board: "📊 项目看板.base"
@@ -55,6 +59,13 @@ properties:
   shipment_date: "发货日期"
   delivery_date: "收货日期"
   invoice_date: "发票开具日期"
+
+property_values:
+  status:
+    - "🔴 丢单"
+    - "🔵 追踪中"
+    - "🟣 待定"
+    - "🟢 赢单"
 
 content:
   meeting_notes_topic: "主题"
@@ -124,35 +135,36 @@ sample:
       email: ""
   customer:
     - name: "安可公司"
-      alias: "安可"
+      alias: ["安可"]
       discount: 10
-      contact: '"[[刘小锋]]"'
+      contact: ["[[刘小锋]]"]
     - name: "环球集团"
-      alias: "环球"
+      alias: ["环球"]
       discount: 15
-      contact: '"[[王美丽]]"'
+      contact: ["[[王美丽]]"]
     - name: "英特科技"
-      alias: "英特"
+      alias: ["英特"]
       discount: 12
-      contact: '"[[张强]]"'
+      contact: ["[[张强]]"]
     - name: "保护伞公司"
-      alias: "保护伞"
+      alias: ["保护伞"]
       discount: 8
-      contact: '"[[戴普林]]"'
+      contact: ["[[戴普林]]"]
     - name: "浩利科技"
-      alias: "浩利"
+      alias: ["浩利"]
       discount: 20
-      contact: '"[[臧桑特]]"'
+      contact: ["[[臧桑特]]"]
     - name: "星辉娱乐"
-      alias: "星辉"
+      alias: ["星辉"]
       discount: 18
-      contact: '"[[李娜]]"'
+      contact: ["[[李娜]]"]
   project:
-    - status: "🟠 LOST"
+    - status: ["🔴 丢单"]
       name: "项目甲"
       customer: '"[[环球集团]]"'
       dealer: '"[[张强]]"'
-      link: ""
+      link: []
+      product: ["[[OBAM Pro]]", "[[OBAM Lite]]"]
       amount: 50000
       summary: "背景：制定新的营销策略。解决方案：全面的市场分析和活动执行。"
       quotation: ""
@@ -160,11 +172,12 @@ sample:
       express: ""
       start_date: "2024-06-01"
       contract_date: ""
-    - status: "🔵 ON-TRACK"
+    - status: ["🔵 追踪中"]
       name: "项目乙"
       customer: '"[[英特科技]]"'
       dealer: '"[[戴普林]]"'
-      link: '"[[项目甲]]"'
+      link: ["[[项目甲]]"]
+      product: ["[[OBAM Enterprise]]"]
       amount: 75000
       summary: "背景：升级IT基础设施。解决方案：实施基于云的解决方案并增强网络安全。"
       quotation: "[[报价单_乙.pdf]]"
@@ -172,11 +185,12 @@ sample:
       express: ""
       start_date: "2024-06-10"
       contract_date: ""
-    - status: "🔵 ON-TRACK"
+    - status: ["🔵 追踪中"]
       name: "项目丙"
       customer: '"[[安可公司]]"'
       dealer: '"[[臧桑特]]"'
-      link: ""
+      link: []
+      product: ["[[OBAM Pro]]"]
       amount: 60000
       summary: "背景：推出新产品线。解决方案：产品开发、市场调研和促销活动。"
       quotation: "[[报价单_丙.pdf]]"
@@ -184,11 +198,12 @@ sample:
       express: ""
       start_date: "2024-06-15"
       contract_date: ""
-    - status: "🟢 WON"
+    - status: ["🟢 赢单"]
       name: "项目丁"
       customer: '"[[保护伞公司]]"'
       dealer: '"[[李娜]]"'
-      link: ""
+      link: []
+      product: ["[[OBAM Enterprise]]", "[[OBAM Lite]]"]
       amount: 85000
       summary: "背景：拓展新市场。解决方案：市场分析、本地化策略和合作伙伴发展。"
       quotation: "[[报价单_丁.pdf]]"
@@ -196,11 +211,12 @@ sample:
       express: "7890123456"
       start_date: "2024-06-20"
       contract_date: "2024-07-01"
-    - status: "🟢 WON"
+    - status: ["🟢 赢单"]
       name: "项目戊"
       customer: '"[[浩利科技]]"'
       dealer: '"[[周杰伦]]"'
-      link: ""
+      link: []
+      product: ["[[OBAM Pro]]"]
       amount: 72000
       summary: "背景：提升客户服务。解决方案：实施CRM系统并培训支持人员。"
       quotation: "[[报价单_戊.pdf]]"
