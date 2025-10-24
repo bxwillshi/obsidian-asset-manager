@@ -162,7 +162,7 @@ sample:
     - status: ["🔴 丢单"]
       name: "项目甲"
       customer: '"[[环球集团]]"'
-      dealer: '"[[张强]]"'
+      dealer: '"[[星辉娱乐]]"'
       link: []
       product: ["[[OBAM Pro]]", "[[OBAM Lite]]"]
       amount: 50000
@@ -175,7 +175,7 @@ sample:
     - status: ["🔵 追踪中"]
       name: "项目乙"
       customer: '"[[英特科技]]"'
-      dealer: '"[[戴普林]]"'
+      dealer: '"[[星辉娱乐]]"'
       link: ["[[项目甲]]"]
       product: ["[[OBAM Enterprise]]"]
       amount: 75000
@@ -188,7 +188,7 @@ sample:
     - status: ["🔵 追踪中"]
       name: "项目丙"
       customer: '"[[安可公司]]"'
-      dealer: '"[[臧桑特]]"'
+      dealer: ""
       link: []
       product: ["[[OBAM Pro]]"]
       amount: 60000
@@ -201,7 +201,7 @@ sample:
     - status: ["🟢 赢单"]
       name: "项目丁"
       customer: '"[[保护伞公司]]"'
-      dealer: '"[[李娜]]"'
+      dealer: ""
       link: []
       product: ["[[OBAM Enterprise]]", "[[OBAM Lite]]"]
       amount: 85000
@@ -214,7 +214,7 @@ sample:
     - status: ["🟢 赢单"]
       name: "项目戊"
       customer: '"[[浩利科技]]"'
-      dealer: '"[[周杰伦]]"'
+      dealer: ""
       link: []
       product: ["[[OBAM Pro]]"]
       amount: 72000

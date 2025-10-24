@@ -162,7 +162,7 @@ sample:
     - status: ["🔴 LOST"]
       name: "Project Alpha"
       customer: "'[[Acme Corp]]'"
-      dealer: "'[[Bob Smith]]'"
+      dealer: "'[[Stark Industries]]'"
       link: []
       product: ["[[OBAM Pro]]", "[[OBAM Lite]]"]
       amount: 50000
@@ -175,7 +175,7 @@ sample:
     - status: ["🔵 ON-TRACK"]
       name: "Project Beta"
       customer: '"[[Globex Inc]]"'
-      dealer: '"[[Charlie Brown]]"'
+      dealer: '"[[Stark Industries]]"'
       link: ["[[Project Alpha]]"]
       product: ["[[OBAM Enterprise]]"]
       amount: 75000
@@ -188,7 +188,7 @@ sample:
     - status: ["🔵 ON-TRACK"]
       name: "Project Gamma"
       customer: '"[[Initech]]"'
-      dealer: '"[[Diana Prince]]"'
+      dealer: ""
       link: []
       product: ["[[OBAM Pro]]"]
       amount: 60000
@@ -201,7 +201,7 @@ sample:
     - status: ["🟢 WON"]
       name: "Project Delta"
       customer: '"[[Umbrella Corp]]"'
-      dealer: '"[[Ethan Hunt]]"'
+      dealer: ""
       link: []
       product: ["[[OBAM Enterprise]]", "[[OBAM Lite]]"]
       amount: 85000
@@ -214,7 +214,7 @@ sample:
     - status: ["🟢 WON"]
       name: "Project Epsilon"
       customer: '"[[Hooli]]"'
-      dealer: '"[[Fiona Glenanne]]"'
+      dealer: ""
       link: []
       product: ["[[OBAM Pro]]"]
       amount: 72000
